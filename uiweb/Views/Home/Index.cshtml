@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["title"] = "Anasayfa";
+}
+
+
+
+@for (int i = 0; i < 10; i++)
+{
+    <div class="col-md-12 mb-2">
+        <div class="card">
+            <img src="http://placeimg.com/640/480/technics" alt="image" class="card-img-top rounded">
+            <div class="card-body">
+                <h2>Lorem ipsum dolor</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga fugit delectus,
+                    dolore officia, animi ab reprehenderit nesciunt est modi deleniti quia quam
+                    voluptatum nulla sint? Officia ex facere totam ad!</p>
+
+            </div>
+            <div class="row justify-content-start p-2">
+                <div class="col">
+                    <a asp-controller="home" asp-action="blog" class="btn btn-sm btn-warning">Devamını Oku...</a>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <span> 10.10.2021 <i class="fas fa-calendar-alt"></i></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}

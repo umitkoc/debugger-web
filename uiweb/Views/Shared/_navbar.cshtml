@@ -1,0 +1,21 @@
+<nav class="container navbar navbar-expand-lg navbar-light bg-light shadow-lg sticky-top" id="navbar">
+    <div class="container-fluid">
+        <div>
+            <i class="fas fa-sun mx-4" onclick="change(event)"></i>
+            <a asp-controller="home" asp-action="music">
+            <i  class="fas fa-headphones"></i>
+
+            </a>
+        </div>
+        <div>
+            <i class="fas fa-bug fa-rotate-90 fa-2x "></i><span> DEBUGGER</span>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <form class="d-none d-md-block">
+            @await Html.PartialAsync("_search")
+        </form>
+    </div>
+</nav>
