@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ümit KOÇ | @ViewData["title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/style.css">
+
+
+</head>
+
+<body>
+
+    <nav class="container navbar navbar-expand-lg navbar-light bg-light shadow-lg sticky-top" id="navbar">
+        <div class="container-fluid">
+            <div>
+                <a asp-controller="admin" asp-action="home"><i class="fas fa-home"></i></a>
+                <i class="fas fa-sun mx-4" onclick="change(event)"></i>
+            </div>
+            <div><i class="fas fa-bug fa-rotate-90 fa-2x "></i><span> DEBUGGER</span></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-md-2 mb-2 d-none d-md-block">
+                <div class="list-group bg-dark">
+                    <a asp-controller="admin" asp-action="comments"
+                        class="list-group-item list-group-item-action active">Yorumlar</a>
+                    <a asp-controller="admin" asp-action="blogs"
+                        class="list-group-item list-group-item-action">Yazılarım</a>
+                    <a asp-controller="admin" asp-action="tags"
+                        class="list-group-item list-group-item-action">Etiketlerim</a>
+                    <a asp-controller="admin" asp-action="socials" class="list-group-item list-group-item-action">Sosyal
+                        Uygulama</a>
+                    <a asp-controller="admin" asp-action="musics"
+                        class="list-group-item list-group-item-action">Müziklerim</a>
+                    <a asp-controller="admin" asp-action="about"
+                        class="list-group-item list-group-item-action">Hakkımda</a>
+                    <a asp-controller="admin" asp-action="profil"
+                        class="list-group-item list-group-item-action">profil</a>
+                    <a asp-controller="account" asp-action="logout"
+                        class="list-group-item list-group-item-action">Çıkış</a>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div class="row">
+
+                    @RenderBody()
+                </div>
+            </div>
+
+        </div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">Yorumlar</a>
+                    <a href="#" class="list-group-item list-group-item-action">Yazılarım</a>
+                    <a href="#" class="list-group-item list-group-item-action">Etiketlerim</a>
+                    <a href="#" class="list-group-item list-group-item-action">Hakkımda</a>
+                    <a href="#" class="list-group-item list-group-item-action">Sosyal Uygulama</a>
+                    <a href="#" class="list-group-item list-group-item-action">Müziklerim</a>
+                    <a href="#" class="list-group-item list-group-item-action">profil</a>
+                    <a href="#" class="list-group-item list-group-item-action">Çıkış</a>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+    </main>
+
+
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+        </script>
+
+
+    <script src="~/js/theme.js"></script>
+
+
+</body>
+
+</html>

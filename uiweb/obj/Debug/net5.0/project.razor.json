@@ -15692,8 +15692,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Admin\\profil.cshtml",
+      "TargetPath": "Views\\Admin\\profil.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Shared\\Components\\About\\default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\About\\default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Admin\\about.cshtml",
+      "TargetPath": "Views\\Admin\\about.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15714,6 +15724,11 @@
     {
       "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Shared\\_search.cshtml",
       "TargetPath": "Views\\Shared\\_search.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Shared\\_admin.cshtml",
+      "TargetPath": "Views\\Shared\\_admin.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15752,6 +15767,21 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Admin\\home.cshtml",
+      "TargetPath": "Views\\Admin\\home.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Admin\\comments.cshtml",
+      "TargetPath": "Views\\Admin\\comments.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Admin\\musics.cshtml",
+      "TargetPath": "Views\\Admin\\musics.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Home\\search.cshtml",
       "TargetPath": "Views\\Home\\search.cshtml",
       "FileKind": "mvc"
@@ -15762,8 +15792,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Admin\\blogs.cshtml",
+      "TargetPath": "Views\\Admin\\blogs.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Shared\\Components\\Author\\default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\Author\\default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Admin\\socials.cshtml",
+      "TargetPath": "Views\\Admin\\socials.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\umitk\\Desktop\\debugger\\uiweb\\Views\\Admin\\tags.cshtml",
+      "TargetPath": "Views\\Admin\\tags.cshtml",
       "FileKind": "mvc"
     },
     {

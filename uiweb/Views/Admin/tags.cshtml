@@ -1,0 +1,23 @@
+@{
+    Layout = "_admin";
+    ViewData["title"] = "Admin | Tags";
+}
+<div class="col-md-12">
+    <div class="row">
+        @for (var i = 0; i < 5; i++)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p>title: c#</p>
+                        <p>blogs: 5</p>
+                        <p>date: 2020-09-09</p>
+                            <a href="# " class="btn btn-success"><i class="fas fa-check-circle"></i></a>
+                        <a href="# " class="btn btn-warning"><i class="fas fa-check-circle"></i></a>
+                        <a href="# " class="btn btn-danger"><i class="fas fa-check-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

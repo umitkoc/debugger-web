@@ -75,10 +75,7 @@ namespace uiweb
                    name: "error",
                    pattern: "Error-404",
                    defaults: new { controller = "home", action = "error" });
-                endpoints.MapControllerRoute(
-               name: "blog",
-               pattern: "home/tagsearch/{id?}",
-               defaults: new { controller = "home", action = "tagsearch" });
+              
                 endpoints.MapControllerRoute(
                     name: "blog",
                     pattern: "home/blog",

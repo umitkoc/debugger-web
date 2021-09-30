@@ -1,0 +1,22 @@
+@{
+    Layout = "_admin";
+    ViewData["title"] = "Admin | Socials";
+}
+<div class="col-md-12">
+    <div class="row text-center">
+        @for (var i = 0; i < 5; i++)
+        {
+            <div class="col-md-4 col-xs-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="#" target="_blank"><i class="fab fa-instagram fa-9x"></i></a>
+                        <hr>
+                        <a href="# " class="btn btn-success"><i class="fas fa-check-circle">Approved</i></a>
+                        <a href="# " class="btn btn-warning"><i class="fas fa-check-circle">Edit</i></a>
+                        <a href="# " class="btn btn-danger"><i class="fas fa-check-circle">Delete</i></a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

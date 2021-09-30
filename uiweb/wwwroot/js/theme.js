@@ -34,6 +34,12 @@ function themecontrol() {
         document.querySelectorAll("h6").forEach(item => item.style.color = "black")
         document.querySelectorAll("h2").forEach(item => item.style.color = "black")
         document.querySelector(".offcanvas").className="offcanvas offcanvas-start bg-light"
+        document
+            .querySelectorAll(".table")
+            .forEach((item) => (item.style.color = "black"));
+          document
+            .querySelectorAll("td")
+            .forEach((item) => (item.style.color = "black"));
     } else {
         document.body.setAttribute("class", "bg-dark")
         document.getElementById("navbar").className = "container navbar navbar-expand-lg navbar-dark bg-dark shadow-lg sticky-top"
@@ -45,6 +51,12 @@ function themecontrol() {
         document.querySelectorAll("h6").forEach(item => item.style.color = "white")
         document.querySelectorAll("h2").forEach(item => item.style.color = "white")
         document.querySelector(".offcanvas").className="offcanvas offcanvas-start bg-dark"
+        document
+            .querySelectorAll(".table")
+            .forEach((item) => (item.style.color = "white"));
+          document
+            .querySelectorAll("td")
+            .forEach((item) => (item.style.color = "white"));
     }
     document.body.style.transitionDuration="0.8s"
 

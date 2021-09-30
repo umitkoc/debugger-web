@@ -1,0 +1,26 @@
+@{
+    Layout = "_admin";
+    ViewData["title"] = "Admin | Musics";
+}
+<div class="col-md-12">
+    <div class="row">
+        @for (var i = 0; i < 5; i++)
+        {
+            <div class="col-md-4 col-xs-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="http://placeimg.com/640/480/technics" alt="" class="card-img-top">
+                       <p>Title:</p>
+                       <p>date:</p>
+                       <p>hidden:</p>
+                       <p>url:</p>
+                        <hr>
+                        <a href="# " class="btn btn-success"><i class="fas fa-check-circle">Approved</i></a>
+                        <a href="# " class="btn btn-warning"><i class="fas fa-check-circle">Edit</i></a>
+                        <a href="# " class="btn btn-danger"><i class="fas fa-check-circle">Delete</i></a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
