@@ -1,38 +1,20 @@
 @{
     ViewData["title"] = "Blog";
 }
+@model Blog
 
 <div class="col-md-12 mb-2">
     <div class="card">
-        <img src="http://placeimg.com/640/480/technics" alt="image" class="card-img-top rounded">
+        <img src="@Model.image" alt="image" class="card-img-top rounded">
         <div class="card-body">
-            <h2>Lorem ipsum dolor</h2>
+            <h2>@Model.title</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia, fuga maxime praesentium numquam alias ea suscipit voluptatibus. Nulla, odio nobis repudiandae corporis quidem nostrum voluptatibus at eaque deserunt dicta.
-                Veritatis, quasi illum quidem porro quod maxime iusto nostrum rerum molestiae nesciunt necessitatibus reprehenderit qui iste, molestias repudiandae rem! Mollitia eaque blanditiis aut nam autem saepe, itaque quam sint consequatur?
-                Nihil, quod quidem deserunt ipsam cum repellat suscipit eum rerum reprehenderit expedita error fugit qui ratione, voluptatem consectetur officia esse. Illum maiores delectus ad enim magni velit iusto nulla hic.
-                Ut, maxime? Dolore dolores nemo animi voluptates ipsam soluta illum eum hic? Cumque quae est adipisci molestias minima, dolore commodi reprehenderit modi non nesciunt illo voluptatem illum officia nisi praesentium!
-                Libero temporibus odio deserunt, eius necessitatibus repellendus ipsa maxime unde, at fugit omnis adipisci error mollitia neque esse nostrum in sequi officiis voluptatibus quas explicabo nulla dignissimos! Accusantium, ipsum tempora!
-                Nobis, dolor corporis voluptatum iure velit vitae ratione distinctio excepturi. Laborum necessitatibus quasi accusamus perferendis cumque accusantium dolore natus nobis asperiores atque aut recusandae quo iusto vitae id, eligendi dignissimos.
-                Culpa iusto quibusdam ad sapiente, tenetur totam eum vero nemo expedita, officia reprehenderit dolor! Consequuntur iure, corrupti laudantium ducimus porro deserunt quas itaque eius delectus eligendi, nostrum iusto animi veniam.
-                Obcaecati nostrum perferendis magni minus, recusandae delectus rem iste repellat corporis nisi animi quas exercitationem molestiae non dolorem reiciendis laborum qui quaerat numquam aut aliquid beatae ipsum? Explicabo, consectetur. Aspernatur.
-                Assumenda delectus vero expedita obcaecati voluptate sed error aspernatur molestias, vel nesciunt totam fuga, exercitationem reprehenderit earum impedit. Odit aut, eius molestiae dolorem delectus quia? Ipsa eaque optio illum repellendus.
-                Cum voluptates commodi quisquam dolor adipisci quas quo sed repudiandae voluptas minus expedita, neque fugiat. Soluta ea sit possimus, ipsam at maiores delectus, nisi voluptate placeat rerum aliquid odit corrupti.
-                Maiores dicta commodi modi itaque nesciunt corporis provident quidem, omnis sunt! Excepturi qui architecto ratione officia saepe, enim itaque accusamus commodi facere fugit praesentium amet consequatur aperiam, minus repudiandae id!
-                Illo fuga dolorum nam id, ad quasi culpa reiciendis earum similique explicabo aspernatur totam rerum commodi, corrupti architecto possimus. Ad ullam quos delectus fuga perferendis laboriosam modi in saepe commodi?
-                Vel ea ipsa rem corporis velit dignissimos aspernatur harum. Accusamus quasi, nam aut rem aspernatur, sed temporibus eveniet neque doloribus blanditiis possimus incidunt culpa vitae dolorem quidem voluptatibus explicabo. Obcaecati?
-                Dolores neque commodi fugiat magni at placeat, cum alias cumque accusantium omnis quibusdam error reiciendis aliquid architecto vel maiores? Blanditiis corporis natus excepturi consequuntur consequatur iusto, quod ab quas sed!
-                Vitae recusandae aut totam velit saepe dicta, hic maxime doloremque cum sequi nulla repudiandae natus nostrum aspernatur nesciunt rerum officiis veritatis consequuntur, eum explicabo? Similique incidunt temporibus sint corrupti iste.
-                Mollitia magnam doloremque, possimus harum perspiciatis quo amet dolore expedita iusto, earum velit dolor non. Doloribus porro maiores id, eum tenetur expedita magni ullam officiis vel est, quo quas nam.
-                Temporibus repellendus voluptatem eius saepe ad, dolor illo facere distinctio fuga soluta qui in rerum eos dolorum eaque alias quod quia quibusdam deleniti. Saepe laborum vero ratione perferendis ex molestiae.
-                Aperiam facilis beatae hic ullam, qui culpa sequi id asperiores labore quis consequuntur similique sapiente harum voluptate omnis enim. Facere similique nesciunt placeat provident delectus ullam, rerum officiis labore laboriosam!
-                Officia ex expedita voluptates fugiat, et obcaecati. Minus porro reiciendis aspernatur deleniti amet ratione officia repudiandae dolores, omnis repellendus, laboriosam illo sint id, numquam velit. Ipsum, officiis assumenda? Possimus, officiis?
-                Ad consequatur, eum pariatur nesciunt commodi, exercitationem deleniti quis, cumque consectetur ex eveniet odio. Id cupiditate, minus corrupti dolor totam et nisi eveniet fuga! Recusandae minima repellat voluptas ipsa tempora.
+                @Model.description
             </p>
 
         </div>
         <div class="col d-flex justify-content-end">
-            <span> 10.10.2021 <i class="fas fa-calendar-alt"></i></span>
+            <span> @Model.Date.ToString($"{0:dd/MM/yyyy}") <i class="fas fa-calendar-alt"></i></span>
         </div>
 
     </div>
@@ -40,11 +22,8 @@
 
 <div class="col-md-12 my-5">
     <form class="form-group row" asp-controller="home" asp-action="comment" method="POST">
-        <div class="col-7 ">
-            <input type="text" name="name" placeholder="firstname lastname" class="form-control">
-        </div>
-        <div class="col-5">
-           <input type="file" name="file" id="" class="form-control" aria-label="avatar select">
+        <div class="col-6 ">
+            <input type="text" name="name" placeholder="username" class="form-control">
         </div>
         <div class="col-12 my-2">
             <textarea placeholder="message..." name="message" class="form-control" id="" cols="30" rows="10"></textarea>
@@ -57,32 +36,35 @@
     </form>
 </div>
 
-<div class="col-md-12 my-5">
-    <hr>
-    <h2>Yorumlar</h2>
-    <hr>
-    
-    <div class="card">
-        <div class="card-body">
-            <div class="row text-center">
-                <div class="col-md-3">
-                    <img src="http://placeimg.com/640/480/food" alt="image" class="card-img-top w-75">
-                    <p>Lorem İpsum</p>
-                </div>
-                <div class="col-md-9">
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum ducimus non numquam dolor
-                        blanditiis cumque tenetur eos cum labore libero, velit hic aperiam temporibus nemo iure quae vel
-                        recusandae dolorum.
-                    </p>
-                    <div class="col d-flex justify-content-end">
-                        <span> 10.10.2021</span>
+@if (Model.Comments.Count() != 0)
+{
+    <div class="col-md-12 my-5">
+        <hr>
+        <h2>Yorumlar</h2>
+        <hr>
+
+        @foreach (var item in Model.Comments)
+        {
+            <div class="card">
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-3">
+                            <img src="@item.avatar" alt="image" class="card-img-top w-75">
+                            <p>@item.username</p>
+                        </div>
+                        <div class="col-md-9">
+                            <p>
+                                @item.message
+                            </p>
+                            <div class="col d-flex justify-content-end">
+                                <span> @item.date.ToString($"{0:dd/MM/yyyy}") <i class="fas fa-calendar-alt"></i></span>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
+
+
             </div>
-        </div>
-
-
+        }
     </div>
-</div>
+}

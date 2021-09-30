@@ -1,0 +1,39 @@
+@{
+    ViewData["title"] = "Anasayfa";
+}
+@model ICollection<Blog>
+
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-bg-danger">Not Blog</div>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        <div class="col-md-12 mb-2">
+            <div class="card">
+                <img src=@item.image alt="image" class="card-img-top rounded">
+                <div class="card-body">
+                    <h2>@item.title</h2>
+                    <p>
+                        @item.description.Substring(0,200);
+                    </p>
+                </div>
+                <div class="row justify-content-between p-2">
+                    <div class="col">
+                        <a asp-controller="home" asp-action="blog" asp-route-id="@item.id" class="btn btn-sm btn-warning">Devamını Oku...</a>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                       <i class="fas fa-comments mx-2"> <small>@item.Comments.Count()</small> </i>
+                        <span> @item.Date.ToString($"{0:dd/MM/yyyy}") <i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+
+
+}

@@ -17,61 +17,54 @@ function filled() {
         title: "",
         image: ""
     }
-
     for (let i = 0; i < liste.length; i++) {
         var _music = Object.create(music);
         _music.title = liste[i].id;
         _music.image = liste[i].name
         _music.musicUrl = liste[i].defaultValue
         mylist.push(_music);
-
     }
     wavesurfer.load(mylist[sayac].musicUrl)
     document.getElementById("img").setAttribute("src", mylist[sayac].image)
-    document.getElementById("title").innerText=mylist[sayac].title
+    document.getElementById("title").innerText = mylist[sayac].title
 }
-
 filled()
 function Play() {
-    if (document.getElementById("play").className == "fas fa-play-circle fa-2x") {
-        document.getElementById("play").className = "fas fa-pause-circle fa-2x"
+    if (document.getElementById("play").className == "fas fa-play-circle fa-2x mx-2") {
+        document.getElementById("play").className = "fas fa-pause-circle fa-2x mx-2"
         wavesurfer.playPause();
     } else {
-        document.getElementById("play").className = "fas fa-play-circle fa-2x"
+        document.getElementById("play").className = "fas fa-play-circle fa-2x mx-2"
         wavesurfer.playPause();
     }
 }
-
 function Stop() {
     wavesurfer.stop();
-    document.getElementById("play").className = "fas fa-play-circle fa-2x"
+    document.getElementById("play").className = "fas fa-play-circle fa-2x mx-2"
 }
-
 function Mute() {
-    if (document.getElementById("mute").className == "fas fa-volume-up  fa-2x") {
-        document.getElementById("mute").className = "fas fa-volume-mute  fa-2x"
+    if (document.getElementById("mute").className == "fas fa-volume-up  fa-2x mx-2") {
+        document.getElementById("mute").className = "fas fa-volume-mute  fa-2x mx-2"
     } else {
-        document.getElementById("mute").className = "fas fa-volume-up  fa-2x"
+        document.getElementById("mute").className = "fas fa-volume-up  fa-2x mx-2"
     }
     wavesurfer.toggleMute();
-
 }
-
 async function Next() {
-    if (sayac < mylist.length-1) {
+    if (sayac < mylist.length - 1) {
         ++sayac;
-        await  wavesurfer.load(mylist[sayac].musicUrl)
+        await wavesurfer.load(mylist[sayac].musicUrl)
         document.getElementById("img").setAttribute("src", mylist[sayac].image)
-        document.getElementById("title").innerText=mylist[sayac].title
+        document.getElementById("title").innerText = mylist[sayac].title
         Stop()
     }
 }
-async function Back ()  {
+async function Back() {
     if (sayac > 0) {
         --sayac;
         await wavesurfer.load(mylist[sayac].musicUrl)
         document.getElementById("img").setAttribute("src", mylist[sayac].image)
-        document.getElementById("title").innerText=mylist[sayac].title
+        document.getElementById("title").innerText = mylist[sayac].title
         Stop()
     }
 }

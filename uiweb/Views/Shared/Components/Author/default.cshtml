@@ -1,0 +1,17 @@
+@model Author
+
+@if (Model == null)
+{
+
+    <div class="alert alert-bg-danger">Not About</div>
+}
+else
+{
+    <img id="avatar1" src="@Model.image" alt="profile" class="card-img-top">
+    <div class="card-body">
+        <h5>Ümit KOÇ</h5>
+        <h6>Software Engineer</h6>
+        <h6 id="job1">@Model.job</h6>
+    </div>
+}
+

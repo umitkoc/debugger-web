@@ -1,45 +1,50 @@
 @{
     ViewData["title"] = "Music";
 }
-@model List<MusicModel>
-<div id="musicList">
-    @foreach (var item in Model)
-    {
-        <input type="hidden" id="@item.Title"  name="@item.Image" value="@item.Url">
-    }
-    <script src="https://unpkg.com/wavesurfer.js"></script>
+@model List<Music>
+@if (Model.Count() != 0)
+{
+    <div id="musicList">
+        @foreach (var item in Model)
+        {
+            <input type="hidden" id="@item.title" name="@item.image" value="@item.url">
+        }
+    </div>
 
 
-</div>
-<div class="col-md-12 mb-2">
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-3">
-                    <img id="img" src="http://placeimg.com/640/480/abstract" alt="image" class="card-img-top rounded">
-                    <hr>
-                     <div class="d-flex justify-content-center">
-                        <i onclick="Play()" id="play" class="fas fa-play-circle fa-2x"></i>
-                        <i onclick="Stop()" class="fas fa-stop-circle  fa-2x"></i>
-                        <i onclick="Mute()" id="mute" class="fas fa-volume-up  fa-2x"></i>
+
+
+    <div class="col-md-12 mb-2">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img id="img" src="http://placeimg.com/640/480/abstract" alt="image" class="card-img-top rounded">
+                        <hr>
+                        <div class="d-flex justify-content-center">
+                            <i onclick="Play()" id="play" class="fas fa-play-circle fa-2x mx-2"></i>
+                            <i onclick="Stop()" class="fas fa-stop-circle  fa-2x mx-2"></i>
+                            <i onclick="Mute()" id="mute" class="fas fa-volume-up  fa-2x mx-2"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <h2 id="title" class="display-6">Title</h2>
-                    <p>Ümit KOÇ</p>
-                    <div id="waveform"></div>
-                   <div class="d-flex justify-content-between">
-                        <i onclick="Back()" class="fas fa-chevron-circle-left fa-2x"></i>
-                        <i onclick="Next()" class="fas fa-chevron-circle-right fa-2x"></i>
+                    <div class="col-md-9">
+                        <h2 id="title" class="display-6"></h2>
+                        <p>Ümit KOÇ</p>
+                        <div id="waveform"></div>
+                        <div class="d-flex justify-content-between">
+                            <i onclick="Back()" class="fas fa-chevron-circle-left fa-2x"></i>
+                            <i onclick="Next()" class="fas fa-chevron-circle-right fa-2x"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
 
 
 
 
 
+<script src="https://unpkg.com/wavesurfer.js"></script>
 <script src="~/js/music.js"></script>

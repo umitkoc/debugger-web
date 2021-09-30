@@ -2,10 +2,11 @@ namespace uiweb.Models
 {
     public class MusicModel
     {
-        public string Title { get; set; }
-        public string  Image { get; set; }
-        public string Url { get; set; }
-        
+        public int id { get; set; }
+        public string title { get; set; }
+        public string url { get; set; }
+        public string image { get; set; }
+        public bool hidden { get; set; }
         
         
         

@@ -1,5 +1,8 @@
 ﻿
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using business.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using uiweb.Models;
 
@@ -7,22 +10,78 @@ namespace uiweb.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IBlogService _blogService;
+        private readonly IMusicService _musicService;
+
+        public HomeController(IBlogService blog, IMusicService musicService)
+        {
+            _blogService = blog;
+            _musicService = musicService;
+
+        }
         public IActionResult Index()
         {
-            return View();
+
+            ICollection<entity.Blog> model = _blogService.GetAll();
+
+
+
+            return View(model);
         }
-        public IActionResult Blog()
+        public IActionResult Blog(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                  return RedirectToAction("error","home");
+            }
+            var model = _blogService.GetById((int)id);
+            if (model == null)
+            {
+                  return RedirectToAction("error","home");
+            }
+            return View(model);
         }
 
 
         public IActionResult Music()
         {
-            List<MusicModel> model = new List<MusicModel>(){
-                new MusicModel{Title="title1",Image="http://placeimg.com/640/480/sports",Url="https://ia801508.us.archive.org/4/items/music_1_202109/music_1.mp3"},
-                new MusicModel{Title="title2",Image="http://placeimg.com/640/480",Url="https://ia601501.us.archive.org/22/items/music_2_202109/music_2.mp3"}
-            };
+
+            var model = _musicService.GetAll();
+            return View(model);
+        }
+        public IActionResult Error()
+        {
+            return View();
+        }
+
+        public IActionResult Tagsearch(int? id)
+        {
+            if (id == null)
+            {
+               return RedirectToAction("error","home");
+            }
+
+            ICollection<entity.Blog> model = _blogService.GetTagBlog((int)id);
+            if (model == null)
+            {
+                return RedirectToAction("error","home");
+            }
+            return View(model);
+        }
+
+
+        public IActionResult Search(string q)
+        {
+
+            if (q == null)
+            {
+                  return RedirectToAction("error","home");
+            }
+            var model = _blogService.GetSearch(q);
+            if (model == null)
+            {
+                 return RedirectToAction("error","home");
+            }
 
             return View(model);
         }

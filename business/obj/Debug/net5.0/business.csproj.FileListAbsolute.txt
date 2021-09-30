@@ -1,0 +1,17 @@
+C:\Users\umitk\Desktop\debugger\business\obj\Debug\net5.0\business.csproj.AssemblyReference.cache
+C:\Users\umitk\Desktop\debugger\business\obj\Debug\net5.0\business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\umitk\Desktop\debugger\business\obj\Debug\net5.0\business.AssemblyInfoInputs.cache
+C:\Users\umitk\Desktop\debugger\business\obj\Debug\net5.0\business.AssemblyInfo.cs
+C:\Users\umitk\Desktop\debugger\business\obj\Debug\net5.0\business.csproj.CoreCompileInputs.cache
+C:\Users\umitk\Desktop\debugger\business\bin\Debug\net5.0\business.deps.json
+C:\Users\umitk\Desktop\debugger\business\bin\Debug\net5.0\business.dll
+C:\Users\umitk\Desktop\debugger\business\bin\Debug\net5.0\ref\business.dll
+C:\Users\umitk\Desktop\debugger\business\bin\Debug\net5.0\business.pdb
+C:\Users\umitk\Desktop\debugger\business\bin\Debug\net5.0\entity.dll
+C:\Users\umitk\Desktop\debugger\business\bin\Debug\net5.0\entity.pdb
+C:\Users\umitk\Desktop\debugger\business\obj\Debug\net5.0\business.csproj.CopyComplete
+C:\Users\umitk\Desktop\debugger\business\obj\Debug\net5.0\business.dll
+C:\Users\umitk\Desktop\debugger\business\obj\Debug\net5.0\ref\business.dll
+C:\Users\umitk\Desktop\debugger\business\obj\Debug\net5.0\business.pdb
+C:\Users\umitk\Desktop\debugger\business\bin\Debug\net5.0\data.dll
+C:\Users\umitk\Desktop\debugger\business\bin\Debug\net5.0\data.pdb
