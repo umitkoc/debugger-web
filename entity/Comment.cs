@@ -2,6 +2,7 @@
 
 
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace entity
 {
@@ -13,6 +14,7 @@ namespace entity
         public bool hidden { get; set; }
         public DateTime date { get; set; }
         public string message { get; set; }
+        public int Blogid { get; set; }
         
         
     }

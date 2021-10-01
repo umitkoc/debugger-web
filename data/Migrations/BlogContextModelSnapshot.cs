@@ -102,7 +102,7 @@ namespace data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("Blogid")
+                    b.Property<int>("Blogid")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("avatar")
@@ -199,7 +199,9 @@ namespace data.Migrations
                 {
                     b.HasOne("entity.Blog", null)
                         .WithMany("Comments")
-                        .HasForeignKey("Blogid");
+                        .HasForeignKey("Blogid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("entity.Blog", b =>

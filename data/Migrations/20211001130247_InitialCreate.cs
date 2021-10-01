@@ -95,7 +95,7 @@ namespace data.Migrations
                     hidden = table.Column<bool>(type: "INTEGER", nullable: false),
                     Date = table.Column<DateTime>(type: "TEXT", nullable: false),
                     description = table.Column<string>(type: "TEXT", nullable: true),
-                    Tagid = table.Column<int>(type: "INTEGER", nullable: true)
+                    Tagid = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -105,7 +105,7 @@ namespace data.Migrations
                         column: x => x.Tagid,
                         principalTable: "Tag",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -119,7 +119,7 @@ namespace data.Migrations
                     hidden = table.Column<bool>(type: "INTEGER", nullable: false),
                     date = table.Column<DateTime>(type: "TEXT", nullable: false),
                     message = table.Column<string>(type: "TEXT", nullable: true),
-                    Blogid = table.Column<int>(type: "INTEGER", nullable: true)
+                    Blogid = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -129,7 +129,7 @@ namespace data.Migrations
                         column: x => x.Blogid,
                         principalTable: "Blog",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

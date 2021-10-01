@@ -24,6 +24,11 @@ namespace data.Concrete
            return _context.Blog.Where(i=>i.hidden).Include(i=>i.Comments).ToList();
         }
 
+        public ICollection<Blog> GetBlogs()
+        {
+             return _context.Blog.Include(i=>i.Comments).ToList();
+        }
+
         public Blog GetById(int id)
         {
             return _context.Blog

@@ -25,17 +25,18 @@ namespace uiweb.Controllers
 
             return View();
         }
+        [HttpGet]
         public IActionResult Comments()
         {
 
 
-            return View();
+            return View(_commentService.GetAll());
         }
         public IActionResult Blogs()
         {
 
 
-            return View();
+            return View(_blogService.GetBlogs());
         }
 
         public IActionResult Tags()
@@ -70,6 +71,34 @@ namespace uiweb.Controllers
 
 
             return View();
+        }
+        [HttpPost]
+        public IActionResult Comments(int? id,string url){
+            if(id==null){
+                 return RedirectToAction("error", "home");
+            }
+            var model=_commentService.GetById((int)id);
+            
+            if(model==null){
+             return RedirectToAction("error", "home");
+            }
+            model.avatar=url;
+            _commentService.Update(model);
+            return RedirectToAction("comments","admin");
+        }
+
+        public IActionResult HiddenComments(int? id){
+            if(id==null){
+                 return RedirectToAction("error", "home");
+            }
+            var model=_commentService.GetById((int)id);
+            
+            if(model==null){
+             return RedirectToAction("error", "home");
+            }
+            model.hidden=!model.hidden;
+            _commentService.Update(model);
+            return RedirectToAction("comments","admin");
         }
     }
 }

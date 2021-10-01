@@ -23,6 +23,11 @@ namespace business.Concrete
            return _repo.GetAll();
         }
 
+        public ICollection<Blog> GetBlogs()
+        {
+              return _repo.GetBlogs();
+        }
+
         public Blog GetById(int id)
         {
            return _repo.GetById(id);

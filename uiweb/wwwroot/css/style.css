@@ -4,3 +4,6 @@
 .modal-body{
     height:80vh;
 }
+i:hover{
+    cursor: pointer;
+}

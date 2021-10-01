@@ -21,7 +21,8 @@
 </div>
 
 <div class="col-md-12 my-5">
-    <form class="form-group row" asp-controller="home" asp-action="comment" method="POST">
+    <form class="form-group row" asp-controller="home" asp-action="CreateMessage" method="POST">
+        <input type="hidden" name="id" value="@Model.id">
         <div class="col-6 ">
             <input type="text" name="name" placeholder="username" class="form-control">
         </div>
@@ -29,7 +30,7 @@
             <textarea placeholder="message..." name="message" class="form-control" id="" cols="30" rows="10"></textarea>
         </div>
         <div class="col-12">
-            <input type="button" class="btn btn-danger" value="Gönder">
+            <input type="submit" class="btn btn-danger" value="Gönder">
         </div>
 
 

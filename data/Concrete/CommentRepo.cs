@@ -14,29 +14,31 @@ namespace data.Concrete
         }
         public void Delete(Comment entity)
         {
-            _context.Set<Comment>().Remove(entity);
+            _context.Comment.Remove(entity);
             _context.SaveChanges();
         }
 
         public ICollection<Comment> GetAll()
         {
-           return _context.Set<Comment>().ToList();
+           return _context.Comment.ToList();
         }
 
         public Comment GetById(int id)
         {
-            return _context.Set<Comment>().Find(id);
+            return _context.Comment.Find(id);
         }
+
+      
 
         public void Insert(Comment entity)
         {
-            _context.Set<Comment>().Add(entity);
+            _context.Comment.Add(entity);
             _context.SaveChanges();
         }
 
         public void Update(Comment entity)
         {
-           _context.Set<Comment>().Update(entity);
+           _context.Comment.Update(entity);
            _context.SaveChanges();
         }
     }

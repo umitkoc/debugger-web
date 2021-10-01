@@ -9,8 +9,8 @@ using data.Concrete;
 namespace data.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20210930103649_InitialCreate2")]
-    partial class InitialCreate2
+    [Migration("20211001130247_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -104,7 +104,7 @@ namespace data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("Blogid")
+                    b.Property<int>("Blogid")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("avatar")
@@ -201,7 +201,9 @@ namespace data.Migrations
                 {
                     b.HasOne("entity.Blog", null)
                         .WithMany("Comments")
-                        .HasForeignKey("Blogid");
+                        .HasForeignKey("Blogid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("entity.Blog", b =>

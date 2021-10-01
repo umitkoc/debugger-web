@@ -15,6 +15,7 @@ namespace entity
         public ICollection<Comment> Comments { get; set; }
         public string description { get; set; }
         public int Tagid { get; set; }
+        public ICollection<Tag> Tags { get; set; }
         
         
        

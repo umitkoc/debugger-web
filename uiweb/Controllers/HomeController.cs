@@ -12,11 +12,13 @@ namespace uiweb.Controllers
     {
         private readonly IBlogService _blogService;
         private readonly IMusicService _musicService;
+        private readonly ICommentService _commentService;
 
-        public HomeController(IBlogService blog, IMusicService musicService)
+        public HomeController(IBlogService blog, IMusicService musicService,ICommentService commentService)
         {
             _blogService = blog;
             _musicService = musicService;
+            _commentService = commentService;
 
         }
         public IActionResult Index()
@@ -32,12 +34,12 @@ namespace uiweb.Controllers
         {
             if (id == null)
             {
-                  return RedirectToAction("error","home");
+                return RedirectToAction("error", "home");
             }
             var model = _blogService.GetById((int)id);
             if (model == null)
             {
-                  return RedirectToAction("error","home");
+                return RedirectToAction("error", "home");
             }
             return View(model);
         }
@@ -58,13 +60,13 @@ namespace uiweb.Controllers
         {
             if (id == null)
             {
-               return RedirectToAction("error","home");
+                return RedirectToAction("error", "home");
             }
 
             ICollection<entity.Blog> model = _blogService.GetTagBlog((int)id);
             if (model == null)
             {
-                return RedirectToAction("error","home");
+                return RedirectToAction("error", "home");
             }
             return View(model);
         }
@@ -75,15 +77,30 @@ namespace uiweb.Controllers
 
             if (q == null)
             {
-                  return RedirectToAction("error","home");
+                return RedirectToAction("error", "home");
             }
             var model = _blogService.GetSearch(q);
             if (model == null)
             {
-                 return RedirectToAction("error","home");
+                return RedirectToAction("error", "home");
             }
 
             return View(model);
+        }
+        [HttpPost]
+        public IActionResult CreateMessage(string name, string message,int id)
+        {
+            Console.WriteLine(name);
+            Console.WriteLine(message);
+            var model=new entity.Comment();
+            model.avatar="";
+            model.date=DateTime.Now;
+            model.hidden=false;
+            model.username=name;
+            model.message=message;
+            model.Blogid=id;
+            _commentService.Insert(model);
+            return RedirectToAction("blog","home",new {id=id});
         }
 
 

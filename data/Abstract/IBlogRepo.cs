@@ -7,5 +7,7 @@ namespace data.Abstract
     {
          ICollection<Blog> GetTagBlog(int id);
          ICollection<Blog> GetSearch(string q);
+
+         ICollection<Blog> GetBlogs();
     }
 }

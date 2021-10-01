@@ -2,30 +2,56 @@
     Layout = "_admin";
     ViewData["title"] = "Admin | Comments";
 }
-<div class="col-md-12 mb-4">
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-3">
-                    <p>id: 1</p>
-                    <p>username: jack</p>
-                    <p>date: 2020-09-09</p>
-                </div>
-                <div class="col-md-9">
-                    <p>
-                        message: <br />
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Doloremque, ut? Molestias commodi consectetur
-                        distinctio, a necessitatibus voluptatum autem inventore
-                        vitae velit nam quasi adipisci maxime sequi repellat
-                        ipsa quo rerum!
-                    </p>
-                </div>
+@model ICollection<Comment>
 
-                <div class="col-md-12 d-flex justify-content-end">
-                    <a href="#" class="btn btn-outline-success"><i class="fas fa-check-circle"></i></a>
+@foreach (var item in Model)
+{
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        @if (item.avatar == "")
+                        {
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                        alt="image" class="card-img-top rounded">
+                        }
+                        else
+                        {
+                            <img src="@item.avatar" alt="image" class="card-img-top rounded">
+                        }
+                    </div>
+                    <div class="col-md-9 my-2">
+                        <h5>@item.username</h5>
+                        <h5>
+                            @item.message
+                        </h5>
+                        <p>@item.date.ToString($"{0:dd/MM/yyyy}")</p>
+                    </div>
+
+                    <div class="col-md-12 d-flex justify-content-between">
+
+                        <a asp-controller="admin" asp-action="HiddenComments" asp-route-id="@item.id"
+                        class="btn btn-outline-@(item.hidden?"danger":"success") mx-4"><i class="fas fa-check-circle fa-2x "></i></a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#name@(item.id)"
+                        class="btn btn-outline-warning mx-4"><i class="fas fa-camera fa-2x "></i> </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+       <!-- Modal -->
+    <div class="modal fade" id="name@(item.id)" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-controller="admin" class="form-group row" asp-action="comments" method="post">
+                <input asp-for=@item.id type="hidden">
+                <input asp-for="@item.avatar" class="form-control">
+                <button type="submit" class="btn btn-success">OK</button>
+            </form>
+            </div>
+        </div>
+    </div>
+}
+

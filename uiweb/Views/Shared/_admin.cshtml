@@ -24,6 +24,16 @@
             <div>
                 <a asp-controller="admin" asp-action="home"><i class="fas fa-home"></i></a>
                 <i class="fas fa-sun mx-4" onclick="change(event)"></i>
+                <span class="d-none d-md-inline">
+                    <a asp-controller="admin" asp-action="profil"><i class="fas fa-user-circle"></i></a>
+                    <a asp-controller="admin" asp-action="comments"><i class="fas fa-comments mx-4"></i></a>
+                    <a asp-controller="admin" asp-action="blogs"><i class="fas fa-feather"></i></a>
+                    <a asp-controller="admin" asp-action="about"><i class="fas fa-address-card mx-4"></i></a>
+                    <a asp-controller="admin" asp-action="musics"><i class="fas fa-music"></i></a>
+                    <a asp-controller="admin" asp-action="socials"><i class="fas fa-share-alt-square mx-4"></i></a>
+                    <a asp-controller="admin" asp-action="tags"><i class="fas fa-tags"></i></a>
+                </span>
+                <a asp-controller="account" asp-action="logout"> <i class="fas fa-sign-out-alt mx-4"></i></a>
             </div>
             <div><i class="fas fa-bug fa-rotate-90 fa-2x "></i><span> DEBUGGER</span></div>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
@@ -32,37 +42,13 @@
             </button>
         </div>
     </nav>
-
     <main class="container mt-4">
         <div class="row">
-            <div class="col-md-2 mb-2 d-none d-md-block">
-                <div class="list-group bg-dark">
-                    <a asp-controller="admin" asp-action="comments"
-                        class="list-group-item list-group-item-action active">Yorumlar</a>
-                    <a asp-controller="admin" asp-action="blogs"
-                        class="list-group-item list-group-item-action">Yazılarım</a>
-                    <a asp-controller="admin" asp-action="tags"
-                        class="list-group-item list-group-item-action">Etiketlerim</a>
-                    <a asp-controller="admin" asp-action="socials" class="list-group-item list-group-item-action">Sosyal
-                        Uygulama</a>
-                    <a asp-controller="admin" asp-action="musics"
-                        class="list-group-item list-group-item-action">Müziklerim</a>
-                    <a asp-controller="admin" asp-action="about"
-                        class="list-group-item list-group-item-action">Hakkımda</a>
-                    <a asp-controller="admin" asp-action="profil"
-                        class="list-group-item list-group-item-action">profil</a>
-                    <a asp-controller="account" asp-action="logout"
-                        class="list-group-item list-group-item-action">Çıkış</a>
-                </div>
-            </div>
-
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div class="row">
-
                     @RenderBody()
                 </div>
             </div>
-
         </div>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
             aria-labelledby="offcanvasExampleLabel">
@@ -71,15 +57,20 @@
                     aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action active">Yorumlar</a>
-                    <a href="#" class="list-group-item list-group-item-action">Yazılarım</a>
-                    <a href="#" class="list-group-item list-group-item-action">Etiketlerim</a>
-                    <a href="#" class="list-group-item list-group-item-action">Hakkımda</a>
-                    <a href="#" class="list-group-item list-group-item-action">Sosyal Uygulama</a>
-                    <a href="#" class="list-group-item list-group-item-action">Müziklerim</a>
-                    <a href="#" class="list-group-item list-group-item-action">profil</a>
-                    <a href="#" class="list-group-item list-group-item-action">Çıkış</a>
+                <div class="list-group text-center">
+                    <a asp-controller="admin" asp-action="profil"><i class="fas fa-user-circle fa-4x"></i></a>
+                    <hr>
+                    <a asp-controller="admin" asp-action="comments"><i class="fas fa-comments mx-4 fa-4x"></i></a>
+                     <hr>
+                    <a asp-controller="admin" asp-action="blogs"><i class="fas fa-feather fa-4x"></i></a>
+                     <hr>
+                    <a asp-controller="admin" asp-action="about"><i class="fas fa-address-card mx-4 fa-4x"></i></a>
+                     <hr>
+                    <a asp-controller="admin" asp-action="musics"><i class="fas fa-music fa-4x"></i></a>
+                     <hr>
+                    <a asp-controller="admin" asp-action="socials"><i class="fas fa-share-alt-square mx-4 fa-4x"></i></a>
+                     <hr>
+                    <a asp-controller="admin" asp-action="tags"><i class="fas fa-tags fa-4x"></i></a>
                 </div>
             </div>
 
